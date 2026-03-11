@@ -1499,8 +1499,10 @@ function doLogin() {
     localStorage.setItem('foxair_devices', JSON.stringify(state.savedDevices));
   }
 
-  // Redirige directement vers l'interface de la machine
-  window.location.href = `http://${ip}`;
+  showLoginMsg('✅ Ouverture en cours...', true);
+
+  // Ouvre l'interface de la machine dans un nouvel onglet
+  window.open(`http://${ip}`, '_blank');
 }
 
 function showLoginMsg(msg, isOk) {
